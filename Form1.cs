@@ -17,18 +17,6 @@ namespace irrigation_master
         #region Selected Area
         private string selectedArea = "";
         private Color color = Color.White;
-        private void buttonSTART_PumpN_Click(object sender, EventArgs e)
-        {
-            color = Color.LightSkyBlue;
-            selectedArea = "Big Tank";
-            textBoxSelectedSection.Text = selectedArea;
-        }
-        private void buttonSTOP_PumpN_Click(object sender, EventArgs e)
-        {
-            color = Color.LightCoral;
-            selectedArea = "STOP Pump N";
-            textBoxSelectedSection.Text = selectedArea;
-        }
         private void buttonMangoNW_Click(object sender, EventArgs e)
         {
             color = Color.LightSkyBlue;

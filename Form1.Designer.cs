@@ -31,11 +31,12 @@
             TabMenu = new TabControl();
             tabPage2 = new TabPage();
             listViewMonday = new ListView();
-            columnHeaderStart = new ColumnHeader();
-            columnStatus = new ColumnHeader();
             columnHeaderSection = new ColumnHeader();
+            columnHeaderStart = new ColumnHeader();
             columnHeaderFinish = new ColumnHeader();
             columnHeaderDuration = new ColumnHeader();
+            columnPump = new ColumnHeader();
+            columnHeader25 = new ColumnHeader();
             tabPage1 = new TabPage();
             listViewTuesday = new ListView();
             columnHeader1 = new ColumnHeader();
@@ -103,12 +104,11 @@
             button5 = new Button();
             button7 = new Button();
             button10 = new Button();
-            buttonPumpS = new Button();
-            buttonPumpN = new Button();
-            buttonSTOP_PumpN = new Button();
-            buttonSTART_PumpN = new Button();
             comboBox1 = new ComboBox();
             label7 = new Label();
+            label6 = new Label();
+            comboBox2 = new ComboBox();
+            button1 = new Button();
             TabMenu.SuspendLayout();
             tabPage2.SuspendLayout();
             tabPage1.SuspendLayout();
@@ -135,7 +135,7 @@
             TabMenu.Location = new Point(263, 22);
             TabMenu.Name = "TabMenu";
             TabMenu.SelectedIndex = 0;
-            TabMenu.Size = new Size(738, 489);
+            TabMenu.Size = new Size(920, 489);
             TabMenu.TabIndex = 0;
             TabMenu.Selecting += TabMenu_Selecting;
             // 
@@ -145,36 +145,31 @@
             tabPage2.Location = new Point(8, 46);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(722, 435);
+            tabPage2.Size = new Size(904, 435);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Monday";
             tabPage2.UseVisualStyleBackColor = true;
             // 
             // listViewMonday
             // 
-            listViewMonday.Columns.AddRange(new ColumnHeader[] { columnHeaderStart, columnStatus, columnHeaderSection, columnHeaderFinish, columnHeaderDuration });
+            listViewMonday.Columns.AddRange(new ColumnHeader[] { columnHeaderSection, columnHeaderStart, columnHeaderFinish, columnHeaderDuration, columnPump, columnHeader25 });
             listViewMonday.FullRowSelect = true;
             listViewMonday.Location = new Point(6, 6);
             listViewMonday.Name = "listViewMonday";
-            listViewMonday.Size = new Size(711, 423);
+            listViewMonday.Size = new Size(892, 423);
             listViewMonday.TabIndex = 23;
             listViewMonday.UseCompatibleStateImageBehavior = false;
             listViewMonday.View = View.Details;
-            // 
-            // columnHeaderStart
-            // 
-            columnHeaderStart.Text = "Time";
-            columnHeaderStart.Width = 120;
-            // 
-            // columnStatus
-            // 
-            columnStatus.Text = "Status";
-            columnStatus.Width = 100;
             // 
             // columnHeaderSection
             // 
             columnHeaderSection.Text = "Section";
             columnHeaderSection.Width = 240;
+            // 
+            // columnHeaderStart
+            // 
+            columnHeaderStart.Text = "Start";
+            columnHeaderStart.Width = 120;
             // 
             // columnHeaderFinish
             // 
@@ -186,13 +181,23 @@
             columnHeaderDuration.Text = "Duration";
             columnHeaderDuration.Width = 140;
             // 
+            // columnPump
+            // 
+            columnPump.Text = "Pump";
+            columnPump.Width = 100;
+            // 
+            // columnHeader25
+            // 
+            columnHeader25.Text = "Scheme";
+            columnHeader25.Width = 100;
+            // 
             // tabPage1
             // 
             tabPage1.Controls.Add(listViewTuesday);
             tabPage1.Location = new Point(8, 46);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(722, 435);
+            tabPage1.Size = new Size(904, 435);
             tabPage1.TabIndex = 2;
             tabPage1.Text = "Tuesday";
             tabPage1.UseVisualStyleBackColor = true;
@@ -234,7 +239,7 @@
             tabPage3.Location = new Point(8, 46);
             tabPage3.Name = "tabPage3";
             tabPage3.Padding = new Padding(3);
-            tabPage3.Size = new Size(722, 435);
+            tabPage3.Size = new Size(904, 435);
             tabPage3.TabIndex = 3;
             tabPage3.Text = "Wednesday";
             tabPage3.UseVisualStyleBackColor = true;
@@ -276,7 +281,7 @@
             tabPage4.Location = new Point(8, 46);
             tabPage4.Name = "tabPage4";
             tabPage4.Padding = new Padding(3);
-            tabPage4.Size = new Size(722, 435);
+            tabPage4.Size = new Size(904, 435);
             tabPage4.TabIndex = 4;
             tabPage4.Text = "Thursday";
             tabPage4.UseVisualStyleBackColor = true;
@@ -318,7 +323,7 @@
             tabPage5.Location = new Point(8, 46);
             tabPage5.Name = "tabPage5";
             tabPage5.Padding = new Padding(3);
-            tabPage5.Size = new Size(722, 435);
+            tabPage5.Size = new Size(904, 435);
             tabPage5.TabIndex = 5;
             tabPage5.Text = "Friday";
             tabPage5.UseVisualStyleBackColor = true;
@@ -360,7 +365,7 @@
             tabPage6.Location = new Point(8, 46);
             tabPage6.Name = "tabPage6";
             tabPage6.Padding = new Padding(3);
-            tabPage6.Size = new Size(722, 435);
+            tabPage6.Size = new Size(904, 435);
             tabPage6.TabIndex = 6;
             tabPage6.Text = "Saturday";
             tabPage6.UseVisualStyleBackColor = true;
@@ -402,7 +407,7 @@
             tabPage7.Location = new Point(8, 46);
             tabPage7.Name = "tabPage7";
             tabPage7.Padding = new Padding(3);
-            tabPage7.Size = new Size(722, 435);
+            tabPage7.Size = new Size(904, 435);
             tabPage7.TabIndex = 7;
             tabPage7.Text = "Sunday";
             tabPage7.UseVisualStyleBackColor = true;
@@ -440,7 +445,7 @@
             // 
             // buttonAdd
             // 
-            buttonAdd.Location = new Point(243, 754);
+            buttonAdd.Location = new Point(942, 590);
             buttonAdd.Name = "buttonAdd";
             buttonAdd.Size = new Size(71, 68);
             buttonAdd.TabIndex = 32;
@@ -522,7 +527,7 @@
             // 
             buttonOrange.BackColor = Color.FromArgb(255, 192, 128);
             buttonOrange.Font = new Font("Britannic Bold", 10.125F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonOrange.Location = new Point(1164, 344);
+            buttonOrange.Location = new Point(1304, 365);
             buttonOrange.Name = "buttonOrange";
             buttonOrange.Size = new Size(101, 184);
             buttonOrange.TabIndex = 22;
@@ -534,7 +539,7 @@
             // 
             buttonMangoNW.BackColor = Color.LightSkyBlue;
             buttonMangoNW.Font = new Font("Britannic Bold", 10.125F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonMangoNW.Location = new Point(1049, 344);
+            buttonMangoNW.Location = new Point(1189, 365);
             buttonMangoNW.Name = "buttonMangoNW";
             buttonMangoNW.Size = new Size(109, 184);
             buttonMangoNW.TabIndex = 21;
@@ -709,7 +714,7 @@
             // 
             button3.BackColor = Color.FromArgb(192, 192, 0);
             button3.Font = new Font("Britannic Bold", 10.125F, FontStyle.Regular, GraphicsUnit.Point);
-            button3.Location = new Point(1049, 203);
+            button3.Location = new Point(1189, 224);
             button3.Name = "button3";
             button3.Size = new Size(216, 135);
             button3.TabIndex = 43;
@@ -720,7 +725,7 @@
             // 
             button4.BackColor = Color.Gainsboro;
             button4.Font = new Font("Britannic Bold", 10.125F, FontStyle.Regular, GraphicsUnit.Point);
-            button4.Location = new Point(1049, 47);
+            button4.Location = new Point(1189, 68);
             button4.Name = "button4";
             button4.Size = new Size(216, 150);
             button4.TabIndex = 44;
@@ -760,59 +765,13 @@
             button10.Text = "Veg\r\nSW";
             button10.UseVisualStyleBackColor = false;
             // 
-            // buttonPumpS
-            // 
-            buttonPumpS.BackColor = Color.FromArgb(192, 255, 192);
-            buttonPumpS.Font = new Font("Britannic Bold", 10.125F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonPumpS.Location = new Point(1041, 700);
-            buttonPumpS.Name = "buttonPumpS";
-            buttonPumpS.Size = new Size(109, 111);
-            buttonPumpS.TabIndex = 50;
-            buttonPumpS.Text = "Pump\r\nS";
-            buttonPumpS.UseVisualStyleBackColor = false;
-            // 
-            // buttonPumpN
-            // 
-            buttonPumpN.BackColor = Color.FromArgb(255, 128, 128);
-            buttonPumpN.Font = new Font("Britannic Bold", 10.125F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonPumpN.Location = new Point(1156, 700);
-            buttonPumpN.Name = "buttonPumpN";
-            buttonPumpN.Size = new Size(109, 111);
-            buttonPumpN.TabIndex = 51;
-            buttonPumpN.Text = "Pump\r\nN";
-            buttonPumpN.UseVisualStyleBackColor = false;
-            // 
-            // buttonSTOP_PumpN
-            // 
-            buttonSTOP_PumpN.BackColor = Color.LightCoral;
-            buttonSTOP_PumpN.Font = new Font("Britannic Bold", 10.125F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonSTOP_PumpN.Location = new Point(1156, 583);
-            buttonSTOP_PumpN.Name = "buttonSTOP_PumpN";
-            buttonSTOP_PumpN.Size = new Size(109, 111);
-            buttonSTOP_PumpN.TabIndex = 53;
-            buttonSTOP_PumpN.Text = "STOP\r\nPump\r\nN";
-            buttonSTOP_PumpN.UseVisualStyleBackColor = false;
-            buttonSTOP_PumpN.Click += buttonSTOP_PumpN_Click;
-            // 
-            // buttonSTART_PumpN
-            // 
-            buttonSTART_PumpN.BackColor = Color.LightSkyBlue;
-            buttonSTART_PumpN.Font = new Font("Britannic Bold", 10.125F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonSTART_PumpN.Location = new Point(10, 12);
-            buttonSTART_PumpN.Name = "buttonSTART_PumpN";
-            buttonSTART_PumpN.Size = new Size(109, 111);
-            buttonSTART_PumpN.TabIndex = 52;
-            buttonSTART_PumpN.Text = "Big\r\nTank";
-            buttonSTART_PumpN.UseVisualStyleBackColor = false;
-            buttonSTART_PumpN.Click += buttonSTART_PumpN_Click;
-            // 
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "OPEN", "CLOSED" });
+            comboBox1.Items.AddRange(new object[] { "River", "Tank", "River & Tank" });
             comboBox1.Location = new Point(349, 719);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(135, 40);
+            comboBox1.Size = new Size(167, 40);
             comboBox1.TabIndex = 54;
             // 
             // label7
@@ -820,21 +779,49 @@
             label7.AutoSize = true;
             label7.Location = new Point(243, 719);
             label7.Name = "label7";
-            label7.Size = new Size(78, 32);
+            label7.Size = new Size(81, 32);
             label7.TabIndex = 56;
-            label7.Text = "Status";
+            label7.Text = "Pump:";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(243, 771);
+            label6.Name = "label6";
+            label6.Size = new Size(104, 32);
+            label6.TabIndex = 58;
+            label6.Text = "Scheme:";
+            // 
+            // comboBox2
+            // 
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Items.AddRange(new object[] { "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%" });
+            comboBox2.Location = new Point(349, 771);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(135, 40);
+            comboBox2.TabIndex = 57;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.LightSkyBlue;
+            button1.Font = new Font("Britannic Bold", 10.125F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.Location = new Point(10, 12);
+            button1.Name = "button1";
+            button1.Size = new Size(109, 106);
+            button1.TabIndex = 59;
+            button1.Text = "Big\r\nTank";
+            button1.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1292, 832);
+            ClientSize = new Size(1417, 927);
+            Controls.Add(button1);
+            Controls.Add(label6);
+            Controls.Add(comboBox2);
             Controls.Add(label7);
             Controls.Add(comboBox1);
-            Controls.Add(buttonSTOP_PumpN);
-            Controls.Add(buttonSTART_PumpN);
-            Controls.Add(buttonPumpN);
-            Controls.Add(buttonPumpS);
             Controls.Add(button10);
             Controls.Add(button7);
             Controls.Add(button5);
@@ -961,12 +948,12 @@
         private Button button5;
         private Button button7;
         private Button button10;
-        private Button buttonPumpS;
-        private Button buttonPumpN;
-        private Button buttonSTOP_PumpN;
-        private Button buttonSTART_PumpN;
         private ComboBox comboBox1;
         private Label label7;
-        private ColumnHeader columnStatus;
+        private ColumnHeader columnPump;
+        private Label label6;
+        private ComboBox comboBox2;
+        private ColumnHeader columnHeader25;
+        private Button button1;
     }
 }
