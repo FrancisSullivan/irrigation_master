@@ -31,8 +31,9 @@
             TabMenu = new TabControl();
             tabPage2 = new TabPage();
             listViewMonday = new ListView();
-            columnHeaderSection = new ColumnHeader();
             columnHeaderStart = new ColumnHeader();
+            columnStatus = new ColumnHeader();
+            columnHeaderSection = new ColumnHeader();
             columnHeaderFinish = new ColumnHeader();
             columnHeaderDuration = new ColumnHeader();
             tabPage1 = new TabPage();
@@ -102,10 +103,12 @@
             button5 = new Button();
             button7 = new Button();
             button10 = new Button();
-            button11 = new Button();
-            button12 = new Button();
+            buttonPumpS = new Button();
+            buttonPumpN = new Button();
             buttonSTOP_PumpN = new Button();
             buttonSTART_PumpN = new Button();
+            comboBox1 = new ComboBox();
+            label7 = new Label();
             TabMenu.SuspendLayout();
             tabPage2.SuspendLayout();
             tabPage1.SuspendLayout();
@@ -149,7 +152,7 @@
             // 
             // listViewMonday
             // 
-            listViewMonday.Columns.AddRange(new ColumnHeader[] { columnHeaderSection, columnHeaderStart, columnHeaderFinish, columnHeaderDuration });
+            listViewMonday.Columns.AddRange(new ColumnHeader[] { columnHeaderStart, columnStatus, columnHeaderSection, columnHeaderFinish, columnHeaderDuration });
             listViewMonday.FullRowSelect = true;
             listViewMonday.Location = new Point(6, 6);
             listViewMonday.Name = "listViewMonday";
@@ -158,15 +161,20 @@
             listViewMonday.UseCompatibleStateImageBehavior = false;
             listViewMonday.View = View.Details;
             // 
+            // columnHeaderStart
+            // 
+            columnHeaderStart.Text = "Time";
+            columnHeaderStart.Width = 120;
+            // 
+            // columnStatus
+            // 
+            columnStatus.Text = "Status";
+            columnStatus.Width = 100;
+            // 
             // columnHeaderSection
             // 
             columnHeaderSection.Text = "Section";
-            columnHeaderSection.Width = 170;
-            // 
-            // columnHeaderStart
-            // 
-            columnHeaderStart.Text = "Start";
-            columnHeaderStart.Width = 120;
+            columnHeaderSection.Width = 240;
             // 
             // columnHeaderFinish
             // 
@@ -432,9 +440,9 @@
             // 
             // buttonAdd
             // 
-            buttonAdd.Location = new Point(865, 626);
+            buttonAdd.Location = new Point(243, 754);
             buttonAdd.Name = "buttonAdd";
-            buttonAdd.Size = new Size(150, 146);
+            buttonAdd.Size = new Size(71, 68);
             buttonAdd.TabIndex = 32;
             buttonAdd.Text = "Add";
             buttonAdd.UseVisualStyleBackColor = true;
@@ -442,7 +450,7 @@
             // 
             // textBoxSelectedSection
             // 
-            textBoxSelectedSection.Location = new Point(482, 629);
+            textBoxSelectedSection.Location = new Point(371, 569);
             textBoxSelectedSection.Name = "textBoxSelectedSection";
             textBoxSelectedSection.Size = new Size(200, 39);
             textBoxSelectedSection.TabIndex = 31;
@@ -450,16 +458,16 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(354, 632);
+            label4.Location = new Point(243, 572);
             label4.Name = "label4";
-            label4.Size = new Size(81, 32);
+            label4.Size = new Size(63, 32);
             label4.TabIndex = 30;
-            label4.Text = "Water:";
+            label4.Text = "Task:";
             // 
             // numericUpDownStartTimeMinutes
             // 
             numericUpDownStartTimeMinutes.Increment = new decimal(new int[] { 15, 0, 0, 0 });
-            numericUpDownStartTimeMinutes.Location = new Point(579, 730);
+            numericUpDownStartTimeMinutes.Location = new Point(468, 670);
             numericUpDownStartTimeMinutes.Maximum = new decimal(new int[] { 45, 0, 0, 0 });
             numericUpDownStartTimeMinutes.Name = "numericUpDownStartTimeMinutes";
             numericUpDownStartTimeMinutes.Size = new Size(81, 39);
@@ -467,7 +475,7 @@
             // 
             // numericUpDownStartTimeHours
             // 
-            numericUpDownStartTimeHours.Location = new Point(479, 730);
+            numericUpDownStartTimeHours.Location = new Point(368, 670);
             numericUpDownStartTimeHours.Maximum = new decimal(new int[] { 23, 0, 0, 0 });
             numericUpDownStartTimeHours.Name = "numericUpDownStartTimeHours";
             numericUpDownStartTimeHours.Size = new Size(81, 39);
@@ -477,16 +485,16 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(351, 730);
+            label3.Location = new Point(240, 670);
             label3.Name = "label3";
-            label3.Size = new Size(127, 32);
+            label3.Size = new Size(72, 32);
             label3.TabIndex = 27;
-            label3.Text = "Start Time:";
+            label3.Text = "Time:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(753, 681);
+            label2.Location = new Point(642, 621);
             label2.Name = "label2";
             label2.Size = new Size(106, 32);
             label2.TabIndex = 26;
@@ -495,7 +503,7 @@
             // numericUpDownDurationMinutes
             // 
             numericUpDownDurationMinutes.Increment = new decimal(new int[] { 15, 0, 0, 0 });
-            numericUpDownDurationMinutes.Location = new Point(666, 679);
+            numericUpDownDurationMinutes.Location = new Point(555, 619);
             numericUpDownDurationMinutes.Maximum = new decimal(new int[] { 45, 0, 0, 0 });
             numericUpDownDurationMinutes.Name = "numericUpDownDurationMinutes";
             numericUpDownDurationMinutes.Size = new Size(81, 39);
@@ -504,11 +512,11 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(354, 683);
+            label1.Location = new Point(243, 623);
             label1.Name = "label1";
-            label1.Size = new Size(53, 32);
+            label1.Size = new Size(71, 32);
             label1.TabIndex = 24;
-            label1.Text = "For:";
+            label1.Text = "After:";
             // 
             // buttonOrange
             // 
@@ -681,7 +689,7 @@
             // 
             // numericUpDownDurationHours
             // 
-            numericUpDownDurationHours.Location = new Point(482, 679);
+            numericUpDownDurationHours.Location = new Point(371, 619);
             numericUpDownDurationHours.Maximum = new decimal(new int[] { 23, 0, 0, 0 });
             numericUpDownDurationHours.Name = "numericUpDownDurationHours";
             numericUpDownDurationHours.Size = new Size(81, 39);
@@ -691,7 +699,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(569, 681);
+            label5.Location = new Point(458, 621);
             label5.Name = "label5";
             label5.Size = new Size(91, 32);
             label5.TabIndex = 40;
@@ -752,27 +760,27 @@
             button10.Text = "Veg\r\nSW";
             button10.UseVisualStyleBackColor = false;
             // 
-            // button11
+            // buttonPumpS
             // 
-            button11.BackColor = Color.FromArgb(192, 255, 192);
-            button11.Font = new Font("Britannic Bold", 10.125F, FontStyle.Regular, GraphicsUnit.Point);
-            button11.Location = new Point(1041, 700);
-            button11.Name = "button11";
-            button11.Size = new Size(109, 111);
-            button11.TabIndex = 50;
-            button11.Text = "START\r\nPump\r\nS";
-            button11.UseVisualStyleBackColor = false;
+            buttonPumpS.BackColor = Color.FromArgb(192, 255, 192);
+            buttonPumpS.Font = new Font("Britannic Bold", 10.125F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonPumpS.Location = new Point(1041, 700);
+            buttonPumpS.Name = "buttonPumpS";
+            buttonPumpS.Size = new Size(109, 111);
+            buttonPumpS.TabIndex = 50;
+            buttonPumpS.Text = "Pump\r\nS";
+            buttonPumpS.UseVisualStyleBackColor = false;
             // 
-            // button12
+            // buttonPumpN
             // 
-            button12.BackColor = Color.FromArgb(255, 128, 128);
-            button12.Font = new Font("Britannic Bold", 10.125F, FontStyle.Regular, GraphicsUnit.Point);
-            button12.Location = new Point(1156, 700);
-            button12.Name = "button12";
-            button12.Size = new Size(109, 111);
-            button12.TabIndex = 51;
-            button12.Text = "STOP\r\nPump\r\nS";
-            button12.UseVisualStyleBackColor = false;
+            buttonPumpN.BackColor = Color.FromArgb(255, 128, 128);
+            buttonPumpN.Font = new Font("Britannic Bold", 10.125F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonPumpN.Location = new Point(1156, 700);
+            buttonPumpN.Name = "buttonPumpN";
+            buttonPumpN.Size = new Size(109, 111);
+            buttonPumpN.TabIndex = 51;
+            buttonPumpN.Text = "Pump\r\nN";
+            buttonPumpN.UseVisualStyleBackColor = false;
             // 
             // buttonSTOP_PumpN
             // 
@@ -788,25 +796,45 @@
             // 
             // buttonSTART_PumpN
             // 
-            buttonSTART_PumpN.BackColor = Color.LightGreen;
+            buttonSTART_PumpN.BackColor = Color.LightSkyBlue;
             buttonSTART_PumpN.Font = new Font("Britannic Bold", 10.125F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonSTART_PumpN.Location = new Point(1041, 583);
+            buttonSTART_PumpN.Location = new Point(10, 12);
             buttonSTART_PumpN.Name = "buttonSTART_PumpN";
             buttonSTART_PumpN.Size = new Size(109, 111);
             buttonSTART_PumpN.TabIndex = 52;
-            buttonSTART_PumpN.Text = "START\r\nPump\r\nN";
+            buttonSTART_PumpN.Text = "Big\r\nTank";
             buttonSTART_PumpN.UseVisualStyleBackColor = false;
             buttonSTART_PumpN.Click += buttonSTART_PumpN_Click;
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "OPEN", "CLOSED" });
+            comboBox1.Location = new Point(349, 719);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(135, 40);
+            comboBox1.TabIndex = 54;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(243, 719);
+            label7.Name = "label7";
+            label7.Size = new Size(78, 32);
+            label7.TabIndex = 56;
+            label7.Text = "Status";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1292, 832);
+            Controls.Add(label7);
+            Controls.Add(comboBox1);
             Controls.Add(buttonSTOP_PumpN);
             Controls.Add(buttonSTART_PumpN);
-            Controls.Add(button12);
-            Controls.Add(button11);
+            Controls.Add(buttonPumpN);
+            Controls.Add(buttonPumpS);
             Controls.Add(button10);
             Controls.Add(button7);
             Controls.Add(button5);
@@ -933,9 +961,12 @@
         private Button button5;
         private Button button7;
         private Button button10;
-        private Button button11;
-        private Button button12;
+        private Button buttonPumpS;
+        private Button buttonPumpN;
         private Button buttonSTOP_PumpN;
         private Button buttonSTART_PumpN;
+        private ComboBox comboBox1;
+        private Label label7;
+        private ColumnHeader columnStatus;
     }
 }

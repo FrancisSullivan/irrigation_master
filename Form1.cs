@@ -19,8 +19,8 @@ namespace irrigation_master
         private Color color = Color.White;
         private void buttonSTART_PumpN_Click(object sender, EventArgs e)
         {
-            color = Color.LightGreen;
-            selectedArea = "START Pump N";
+            color = Color.LightSkyBlue;
+            selectedArea = "Big Tank";
             textBoxSelectedSection.Text = selectedArea;
         }
         private void buttonSTOP_PumpN_Click(object sender, EventArgs e)
