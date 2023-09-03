@@ -106,6 +106,10 @@
             button8 = new Button();
             button9 = new Button();
             button10 = new Button();
+            button11 = new Button();
+            button12 = new Button();
+            button13 = new Button();
+            button14 = new Button();
             TabMenu.SuspendLayout();
             tabPage2.SuspendLayout();
             tabPage1.SuspendLayout();
@@ -788,11 +792,59 @@
             button10.Text = "Veg\r\nSW";
             button10.UseVisualStyleBackColor = false;
             // 
+            // button11
+            // 
+            button11.BackColor = Color.FromArgb(192, 255, 192);
+            button11.Font = new Font("Britannic Bold", 10.125F, FontStyle.Regular, GraphicsUnit.Point);
+            button11.Location = new Point(1049, 735);
+            button11.Name = "button11";
+            button11.Size = new Size(109, 111);
+            button11.TabIndex = 50;
+            button11.Text = "START\r\nPump\r\nS";
+            button11.UseVisualStyleBackColor = false;
+            // 
+            // button12
+            // 
+            button12.BackColor = Color.FromArgb(255, 128, 128);
+            button12.Font = new Font("Britannic Bold", 10.125F, FontStyle.Regular, GraphicsUnit.Point);
+            button12.Location = new Point(1164, 735);
+            button12.Name = "button12";
+            button12.Size = new Size(109, 111);
+            button12.TabIndex = 51;
+            button12.Text = "STOP\r\nPump\r\nS";
+            button12.UseVisualStyleBackColor = false;
+            // 
+            // button13
+            // 
+            button13.BackColor = Color.FromArgb(255, 128, 128);
+            button13.Font = new Font("Britannic Bold", 10.125F, FontStyle.Regular, GraphicsUnit.Point);
+            button13.Location = new Point(1164, 618);
+            button13.Name = "button13";
+            button13.Size = new Size(109, 111);
+            button13.TabIndex = 53;
+            button13.Text = "STOP\r\nPump\r\nN";
+            button13.UseVisualStyleBackColor = false;
+            // 
+            // button14
+            // 
+            button14.BackColor = Color.FromArgb(192, 255, 192);
+            button14.Font = new Font("Britannic Bold", 10.125F, FontStyle.Regular, GraphicsUnit.Point);
+            button14.Location = new Point(1049, 618);
+            button14.Name = "button14";
+            button14.Size = new Size(109, 111);
+            button14.TabIndex = 52;
+            button14.Text = "START\r\nPump\r\nN";
+            button14.UseVisualStyleBackColor = false;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1292, 870);
+            Controls.Add(button13);
+            Controls.Add(button14);
+            Controls.Add(button12);
+            Controls.Add(button11);
             Controls.Add(button10);
             Controls.Add(button9);
             Controls.Add(button8);
@@ -927,5 +979,9 @@
         private Button button8;
         private Button button9;
         private Button button10;
+        private Button button11;
+        private Button button12;
+        private Button button13;
+        private Button button14;
     }
 }
