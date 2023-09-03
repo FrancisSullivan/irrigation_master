@@ -519,9 +519,9 @@
             label1.AutoSize = true;
             label1.Location = new Point(243, 623);
             label1.Name = "label1";
-            label1.Size = new Size(71, 32);
+            label1.Size = new Size(112, 32);
             label1.TabIndex = 24;
-            label1.Text = "After:";
+            label1.Text = "Duration:";
             // 
             // buttonOrange
             // 
@@ -795,7 +795,7 @@
             // comboBox2
             // 
             comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%" });
+            comboBox2.Items.AddRange(new object[] { "OFF", "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%" });
             comboBox2.Location = new Point(349, 771);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(135, 40);
