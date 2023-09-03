@@ -512,20 +512,24 @@
             // buttonOrange
             // 
             buttonOrange.BackColor = Color.FromArgb(255, 192, 128);
+            buttonOrange.Font = new Font("Britannic Bold", 10.125F, FontStyle.Regular, GraphicsUnit.Point);
             buttonOrange.Location = new Point(1250, 355);
             buttonOrange.Name = "buttonOrange";
             buttonOrange.Size = new Size(101, 184);
             buttonOrange.TabIndex = 22;
+            buttonOrange.Text = "Mango NE";
             buttonOrange.UseVisualStyleBackColor = false;
             buttonOrange.Click += buttonOrange_Click;
             // 
             // buttonRed
             // 
             buttonRed.BackColor = Color.FromArgb(255, 128, 128);
+            buttonRed.Font = new Font("Britannic Bold", 10.125F, FontStyle.Regular, GraphicsUnit.Point);
             buttonRed.Location = new Point(1135, 355);
             buttonRed.Name = "buttonRed";
             buttonRed.Size = new Size(109, 184);
             buttonRed.TabIndex = 21;
+            buttonRed.Text = "Mango NW";
             buttonRed.UseVisualStyleBackColor = false;
             buttonRed.Click += buttonRed_Click;
             // 
@@ -697,19 +701,23 @@
             // button3
             // 
             button3.BackColor = Color.FromArgb(192, 192, 0);
+            button3.Font = new Font("Britannic Bold", 10.125F, FontStyle.Regular, GraphicsUnit.Point);
             button3.Location = new Point(1135, 214);
             button3.Name = "button3";
             button3.Size = new Size(216, 135);
             button3.TabIndex = 43;
+            button3.Text = "Avocado\r\nS";
             button3.UseVisualStyleBackColor = false;
             // 
             // button4
             // 
             button4.BackColor = Color.Gainsboro;
+            button4.Font = new Font("Britannic Bold", 10.125F, FontStyle.Regular, GraphicsUnit.Point);
             button4.Location = new Point(1135, 58);
             button4.Name = "button4";
             button4.Size = new Size(216, 150);
             button4.TabIndex = 44;
+            button4.Text = "Avocado\r\nN";
             button4.UseVisualStyleBackColor = false;
             // 
             // button5
