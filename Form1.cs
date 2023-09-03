@@ -17,9 +17,21 @@ namespace irrigation_master
         #region Selected Area
         private string selectedArea = "";
         private Color color = Color.White;
-        private void buttonMangoNW_Click(object sender, EventArgs e)
+        private void buttonSTART_PumpN_Click(object sender, EventArgs e)
+        {
+            color = Color.LightGreen;
+            selectedArea = "START Pump N";
+            textBoxSelectedSection.Text = selectedArea;
+        }
+        private void buttonSTOP_PumpN_Click(object sender, EventArgs e)
         {
             color = Color.LightCoral;
+            selectedArea = "STOP Pump N";
+            textBoxSelectedSection.Text = selectedArea;
+        }
+        private void buttonMangoNW_Click(object sender, EventArgs e)
+        {
+            color = Color.LightSkyBlue;
             selectedArea = "Mango NW";
             textBoxSelectedSection.Text = selectedArea;
         }
@@ -269,6 +281,7 @@ namespace irrigation_master
             UpdateListView();
         }
         #endregion
+
     }
 }
 #region 

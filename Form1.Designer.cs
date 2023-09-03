@@ -104,8 +104,8 @@
             button10 = new Button();
             button11 = new Button();
             button12 = new Button();
-            button13 = new Button();
-            button14 = new Button();
+            buttonSTOP_PumpN = new Button();
+            buttonSTART_PumpN = new Button();
             TabMenu.SuspendLayout();
             tabPage2.SuspendLayout();
             tabPage1.SuspendLayout();
@@ -161,7 +161,7 @@
             // columnHeaderSection
             // 
             columnHeaderSection.Text = "Section";
-            columnHeaderSection.Width = 140;
+            columnHeaderSection.Width = 170;
             // 
             // columnHeaderStart
             // 
@@ -524,7 +524,7 @@
             // 
             // buttonMangoNW
             // 
-            buttonMangoNW.BackColor = Color.FromArgb(255, 128, 128);
+            buttonMangoNW.BackColor = Color.LightSkyBlue;
             buttonMangoNW.Font = new Font("Britannic Bold", 10.125F, FontStyle.Regular, GraphicsUnit.Point);
             buttonMangoNW.Location = new Point(1049, 344);
             buttonMangoNW.Name = "buttonMangoNW";
@@ -774,35 +774,37 @@
             button12.Text = "STOP\r\nPump\r\nS";
             button12.UseVisualStyleBackColor = false;
             // 
-            // button13
+            // buttonSTOP_PumpN
             // 
-            button13.BackColor = Color.FromArgb(255, 128, 128);
-            button13.Font = new Font("Britannic Bold", 10.125F, FontStyle.Regular, GraphicsUnit.Point);
-            button13.Location = new Point(1156, 583);
-            button13.Name = "button13";
-            button13.Size = new Size(109, 111);
-            button13.TabIndex = 53;
-            button13.Text = "STOP\r\nPump\r\nN";
-            button13.UseVisualStyleBackColor = false;
+            buttonSTOP_PumpN.BackColor = Color.LightCoral;
+            buttonSTOP_PumpN.Font = new Font("Britannic Bold", 10.125F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonSTOP_PumpN.Location = new Point(1156, 583);
+            buttonSTOP_PumpN.Name = "buttonSTOP_PumpN";
+            buttonSTOP_PumpN.Size = new Size(109, 111);
+            buttonSTOP_PumpN.TabIndex = 53;
+            buttonSTOP_PumpN.Text = "STOP\r\nPump\r\nN";
+            buttonSTOP_PumpN.UseVisualStyleBackColor = false;
+            buttonSTOP_PumpN.Click += buttonSTOP_PumpN_Click;
             // 
-            // button14
+            // buttonSTART_PumpN
             // 
-            button14.BackColor = Color.FromArgb(192, 255, 192);
-            button14.Font = new Font("Britannic Bold", 10.125F, FontStyle.Regular, GraphicsUnit.Point);
-            button14.Location = new Point(1041, 583);
-            button14.Name = "button14";
-            button14.Size = new Size(109, 111);
-            button14.TabIndex = 52;
-            button14.Text = "START\r\nPump\r\nN";
-            button14.UseVisualStyleBackColor = false;
+            buttonSTART_PumpN.BackColor = Color.LightGreen;
+            buttonSTART_PumpN.Font = new Font("Britannic Bold", 10.125F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonSTART_PumpN.Location = new Point(1041, 583);
+            buttonSTART_PumpN.Name = "buttonSTART_PumpN";
+            buttonSTART_PumpN.Size = new Size(109, 111);
+            buttonSTART_PumpN.TabIndex = 52;
+            buttonSTART_PumpN.Text = "START\r\nPump\r\nN";
+            buttonSTART_PumpN.UseVisualStyleBackColor = false;
+            buttonSTART_PumpN.Click += buttonSTART_PumpN_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1292, 832);
-            Controls.Add(button13);
-            Controls.Add(button14);
+            Controls.Add(buttonSTOP_PumpN);
+            Controls.Add(buttonSTART_PumpN);
             Controls.Add(button12);
             Controls.Add(button11);
             Controls.Add(button10);
@@ -933,7 +935,7 @@
         private Button button10;
         private Button button11;
         private Button button12;
-        private Button button13;
-        private Button button14;
+        private Button buttonSTOP_PumpN;
+        private Button buttonSTART_PumpN;
     }
 }
