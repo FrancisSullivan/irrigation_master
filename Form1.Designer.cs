@@ -81,7 +81,7 @@
             numericUpDownDurationMinutes = new NumericUpDown();
             label1 = new Label();
             buttonOrange = new Button();
-            buttonRed = new Button();
+            buttonMangoNW = new Button();
             buttonPurple1 = new Button();
             buttonPurple0 = new Button();
             buttonGreen2 = new Button();
@@ -97,14 +97,10 @@
             buttonMoveUp = new Button();
             numericUpDownDurationHours = new NumericUpDown();
             label5 = new Label();
-            button1 = new Button();
-            button2 = new Button();
             button3 = new Button();
             button4 = new Button();
             button5 = new Button();
             button7 = new Button();
-            button8 = new Button();
-            button9 = new Button();
             button10 = new Button();
             button11 = new Button();
             button12 = new Button();
@@ -165,7 +161,7 @@
             // columnHeaderSection
             // 
             columnHeaderSection.Text = "Section";
-            columnHeaderSection.Width = 120;
+            columnHeaderSection.Width = 140;
             // 
             // columnHeaderStart
             // 
@@ -526,23 +522,23 @@
             buttonOrange.UseVisualStyleBackColor = false;
             buttonOrange.Click += buttonOrange_Click;
             // 
-            // buttonRed
+            // buttonMangoNW
             // 
-            buttonRed.BackColor = Color.FromArgb(255, 128, 128);
-            buttonRed.Font = new Font("Britannic Bold", 10.125F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonRed.Location = new Point(1049, 344);
-            buttonRed.Name = "buttonRed";
-            buttonRed.Size = new Size(109, 184);
-            buttonRed.TabIndex = 21;
-            buttonRed.Text = "Mango NW";
-            buttonRed.UseVisualStyleBackColor = false;
-            buttonRed.Click += buttonRed_Click;
+            buttonMangoNW.BackColor = Color.FromArgb(255, 128, 128);
+            buttonMangoNW.Font = new Font("Britannic Bold", 10.125F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonMangoNW.Location = new Point(1049, 344);
+            buttonMangoNW.Name = "buttonMangoNW";
+            buttonMangoNW.Size = new Size(109, 184);
+            buttonMangoNW.TabIndex = 21;
+            buttonMangoNW.Text = "Mango NW";
+            buttonMangoNW.UseVisualStyleBackColor = false;
+            buttonMangoNW.Click += buttonMangoNW_Click;
             // 
             // buttonPurple1
             // 
             buttonPurple1.BackColor = Color.FromArgb(192, 192, 255);
             buttonPurple1.Font = new Font("Britannic Bold", 10.125F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonPurple1.Location = new Point(29, 501);
+            buttonPurple1.Location = new Point(18, 466);
             buttonPurple1.Name = "buttonPurple1";
             buttonPurple1.Size = new Size(101, 74);
             buttonPurple1.TabIndex = 19;
@@ -554,7 +550,7 @@
             // 
             buttonPurple0.BackColor = Color.FromArgb(192, 192, 255);
             buttonPurple0.Font = new Font("Britannic Bold", 10.125F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonPurple0.Location = new Point(29, 421);
+            buttonPurple0.Location = new Point(18, 386);
             buttonPurple0.Name = "buttonPurple0";
             buttonPurple0.Size = new Size(216, 74);
             buttonPurple0.TabIndex = 18;
@@ -566,7 +562,7 @@
             // 
             buttonGreen2.BackColor = Color.FromArgb(192, 255, 192);
             buttonGreen2.Font = new Font("Britannic Bold", 10.125F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonGreen2.Location = new Point(136, 774);
+            buttonGreen2.Location = new Point(125, 739);
             buttonGreen2.Name = "buttonGreen2";
             buttonGreen2.Size = new Size(109, 72);
             buttonGreen2.TabIndex = 17;
@@ -578,7 +574,7 @@
             // 
             buttonGreen1.BackColor = Color.FromArgb(192, 255, 192);
             buttonGreen1.Font = new Font("Britannic Bold", 10.125F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonGreen1.Location = new Point(29, 774);
+            buttonGreen1.Location = new Point(18, 739);
             buttonGreen1.Name = "buttonGreen1";
             buttonGreen1.Size = new Size(101, 72);
             buttonGreen1.TabIndex = 16;
@@ -590,7 +586,7 @@
             // 
             buttonGreen0.BackColor = Color.FromArgb(192, 255, 192);
             buttonGreen0.Font = new Font("Britannic Bold", 10.125F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonGreen0.Location = new Point(136, 501);
+            buttonGreen0.Location = new Point(125, 466);
             buttonGreen0.Name = "buttonGreen0";
             buttonGreen0.Size = new Size(109, 74);
             buttonGreen0.TabIndex = 15;
@@ -602,7 +598,7 @@
             // 
             buttonPink.BackColor = Color.FromArgb(255, 192, 255);
             buttonPink.Font = new Font("Britannic Bold", 10.125F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonPink.Location = new Point(136, 581);
+            buttonPink.Location = new Point(125, 546);
             buttonPink.Name = "buttonPink";
             buttonPink.Size = new Size(109, 174);
             buttonPink.TabIndex = 14;
@@ -614,7 +610,7 @@
             // 
             buttonYellow.BackColor = Color.FromArgb(255, 255, 192);
             buttonYellow.Font = new Font("Britannic Bold", 10.125F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonYellow.Location = new Point(29, 285);
+            buttonYellow.Location = new Point(18, 250);
             buttonYellow.Name = "buttonYellow";
             buttonYellow.Size = new Size(216, 119);
             buttonYellow.TabIndex = 13;
@@ -626,7 +622,7 @@
             // 
             buttonBlue.BackColor = Color.FromArgb(192, 255, 255);
             buttonBlue.Font = new Font("Britannic Bold", 10.125F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonBlue.Location = new Point(29, 581);
+            buttonBlue.Location = new Point(18, 546);
             buttonBlue.Name = "buttonBlue";
             buttonBlue.Size = new Size(101, 174);
             buttonBlue.TabIndex = 10;
@@ -701,24 +697,6 @@
             label5.TabIndex = 40;
             label5.Text = "Hour(s)";
             // 
-            // button1
-            // 
-            button1.BackColor = Color.Gold;
-            button1.Location = new Point(51, 91);
-            button1.Name = "button1";
-            button1.Size = new Size(31, 31);
-            button1.TabIndex = 41;
-            button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.Gold;
-            button2.Location = new Point(313, 792);
-            button2.Name = "button2";
-            button2.Size = new Size(31, 31);
-            button2.TabIndex = 42;
-            button2.UseVisualStyleBackColor = false;
-            // 
             // button3
             // 
             button3.BackColor = Color.FromArgb(192, 192, 0);
@@ -745,7 +723,7 @@
             // 
             button5.BackColor = Color.FromArgb(192, 255, 192);
             button5.Font = new Font("Britannic Bold", 10.125F, FontStyle.Regular, GraphicsUnit.Point);
-            button5.Location = new Point(136, 182);
+            button5.Location = new Point(125, 147);
             button5.Name = "button5";
             button5.Size = new Size(109, 84);
             button5.TabIndex = 45;
@@ -756,36 +734,18 @@
             // 
             button7.BackColor = Color.FromArgb(192, 255, 192);
             button7.Font = new Font("Britannic Bold", 10.125F, FontStyle.Regular, GraphicsUnit.Point);
-            button7.Location = new Point(136, 47);
+            button7.Location = new Point(125, 12);
             button7.Name = "button7";
             button7.Size = new Size(109, 111);
             button7.TabIndex = 46;
             button7.Text = "Veg\r\nN";
             button7.UseVisualStyleBackColor = false;
             // 
-            // button8
-            // 
-            button8.BackColor = Color.DarkOrange;
-            button8.Location = new Point(99, 127);
-            button8.Name = "button8";
-            button8.Size = new Size(31, 31);
-            button8.TabIndex = 47;
-            button8.UseVisualStyleBackColor = false;
-            // 
-            // button9
-            // 
-            button9.BackColor = Color.IndianRed;
-            button9.Location = new Point(99, 76);
-            button9.Name = "button9";
-            button9.Size = new Size(31, 31);
-            button9.TabIndex = 48;
-            button9.UseVisualStyleBackColor = false;
-            // 
             // button10
             // 
             button10.BackColor = Color.FromArgb(192, 255, 192);
             button10.Font = new Font("Britannic Bold", 10.125F, FontStyle.Regular, GraphicsUnit.Point);
-            button10.Location = new Point(29, 182);
+            button10.Location = new Point(18, 147);
             button10.Name = "button10";
             button10.Size = new Size(101, 84);
             button10.TabIndex = 49;
@@ -796,7 +756,7 @@
             // 
             button11.BackColor = Color.FromArgb(192, 255, 192);
             button11.Font = new Font("Britannic Bold", 10.125F, FontStyle.Regular, GraphicsUnit.Point);
-            button11.Location = new Point(1049, 735);
+            button11.Location = new Point(1041, 700);
             button11.Name = "button11";
             button11.Size = new Size(109, 111);
             button11.TabIndex = 50;
@@ -807,7 +767,7 @@
             // 
             button12.BackColor = Color.FromArgb(255, 128, 128);
             button12.Font = new Font("Britannic Bold", 10.125F, FontStyle.Regular, GraphicsUnit.Point);
-            button12.Location = new Point(1164, 735);
+            button12.Location = new Point(1156, 700);
             button12.Name = "button12";
             button12.Size = new Size(109, 111);
             button12.TabIndex = 51;
@@ -818,7 +778,7 @@
             // 
             button13.BackColor = Color.FromArgb(255, 128, 128);
             button13.Font = new Font("Britannic Bold", 10.125F, FontStyle.Regular, GraphicsUnit.Point);
-            button13.Location = new Point(1164, 618);
+            button13.Location = new Point(1156, 583);
             button13.Name = "button13";
             button13.Size = new Size(109, 111);
             button13.TabIndex = 53;
@@ -829,7 +789,7 @@
             // 
             button14.BackColor = Color.FromArgb(192, 255, 192);
             button14.Font = new Font("Britannic Bold", 10.125F, FontStyle.Regular, GraphicsUnit.Point);
-            button14.Location = new Point(1049, 618);
+            button14.Location = new Point(1041, 583);
             button14.Name = "button14";
             button14.Size = new Size(109, 111);
             button14.TabIndex = 52;
@@ -840,20 +800,16 @@
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1292, 870);
+            ClientSize = new Size(1292, 832);
             Controls.Add(button13);
             Controls.Add(button14);
             Controls.Add(button12);
             Controls.Add(button11);
             Controls.Add(button10);
-            Controls.Add(button9);
-            Controls.Add(button8);
             Controls.Add(button7);
             Controls.Add(button5);
             Controls.Add(button4);
             Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
             Controls.Add(label5);
             Controls.Add(numericUpDownDurationHours);
             Controls.Add(buttonMoveUp);
@@ -865,7 +821,7 @@
             Controls.Add(textBoxSelectedSection);
             Controls.Add(TabMenu);
             Controls.Add(label4);
-            Controls.Add(buttonRed);
+            Controls.Add(buttonMangoNW);
             Controls.Add(numericUpDownStartTimeMinutes);
             Controls.Add(buttonOrange);
             Controls.Add(numericUpDownStartTimeHours);
@@ -912,7 +868,7 @@
         private Button buttonGreen1;
         private Button buttonGreen0;
         private Button buttonOrange;
-        private Button buttonRed;
+        private Button buttonMangoNW;
         private ListView listViewMonday;
         private Label label2;
         private NumericUpDown numericUpDownDurationMinutes;
@@ -970,14 +926,10 @@
         private ColumnHeader columnHeader22;
         private ColumnHeader columnHeader23;
         private ColumnHeader columnHeader24;
-        private Button button1;
-        private Button button2;
         private Button button3;
         private Button button4;
         private Button button5;
         private Button button7;
-        private Button button8;
-        private Button button9;
         private Button button10;
         private Button button11;
         private Button button12;

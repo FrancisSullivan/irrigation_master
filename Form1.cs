@@ -16,6 +16,19 @@ namespace irrigation_master
         #endregion
         #region Selected Area
         private string selectedArea = "";
+        private Color color = Color.White;
+        private void buttonMangoNW_Click(object sender, EventArgs e)
+        {
+            color = Color.LightCoral;
+            selectedArea = "Mango NW";
+            textBoxSelectedSection.Text = selectedArea;
+        }
+        private void buttonOrange_Click(object sender, EventArgs e)
+        {
+            color = Color.Orange;
+            selectedArea = "Mango NE";
+            textBoxSelectedSection.Text = selectedArea;
+        }
         private void buttonBlue_Click(object sender, EventArgs e)
         {
             selectedArea = "Cyan";
@@ -56,30 +69,20 @@ namespace irrigation_master
             selectedArea = "Yellow";
             textBoxSelectedSection.Text = selectedArea;
         }
-        private void buttonRed_Click(object sender, EventArgs e)
-        {
-            selectedArea = "Red";
-            textBoxSelectedSection.Text = selectedArea;
-        }
-        private void buttonOrange_Click(object sender, EventArgs e)
-        {
-            selectedArea = "Orange";
-            textBoxSelectedSection.Text = selectedArea;
-        }
         #endregion
         #region Object Lists for each Day
-        List<WateringCan> mondaysWateringCans = new List<WateringCan>();
-        List<WateringCan> tuesdaysWateringCans = new List<WateringCan>();
-        List<WateringCan> wednesdaysWateringCans = new List<WateringCan>();
-        List<WateringCan> thursdaysWateringCans = new List<WateringCan>();
-        List<WateringCan> fridaysWateringCans = new List<WateringCan>();
-        List<WateringCan> saturdaysWateringCans = new List<WateringCan>();
-        List<WateringCan> sundaysWateringCans = new List<WateringCan>();
+        List<Task> mondaysWateringCans = new List<Task>();
+        List<Task> tuesdaysWateringCans = new List<Task>();
+        List<Task> wednesdaysWateringCans = new List<Task>();
+        List<Task> thursdaysWateringCans = new List<Task>();
+        List<Task> fridaysWateringCans = new List<Task>();
+        List<Task> saturdaysWateringCans = new List<Task>();
+        List<Task> sundaysWateringCans = new List<Task>();
         #endregion
         #region Temp Lists for Selected Day
         private int selectedDay = 0;
         private ListView tempListView;
-        List<WateringCan> tempWateringCans = new List<WateringCan>();
+        List<Task> tempWateringCans = new List<Task>();
         private void TabMenu_Selecting(object sender, TabControlCancelEventArgs e)
         {
             selectedDay = e.TabPageIndex;
@@ -127,20 +130,14 @@ namespace irrigation_master
         }
         private void addItem()
         {
-            float durationHours
-                = float.Parse(numericUpDownDurationHours.Text);
-            float durationMinutes
-                = float.Parse(numericUpDownDurationMinutes.Text);
-            float durationDecimal
-                = durationHours + durationMinutes / 60;
-            int startTimeHoursInteger
-                = int.Parse(numericUpDownStartTimeHours.Text);
-            float startTimeMinutesDecimal
-                = float.Parse(numericUpDownStartTimeMinutes.Text);
-            float startTimeDecimal
-                = startTimeHoursInteger + startTimeMinutesDecimal / 60;
-            WateringCan addWateringCan = new WateringCan
-                (selectedArea, durationDecimal, startTimeDecimal);
+            float durationHours = float.Parse(numericUpDownDurationHours.Text);
+            float durationMinutes = float.Parse(numericUpDownDurationMinutes.Text);
+            float durationDecimal = durationHours + durationMinutes / 60;
+            int startTimeHoursInteger = int.Parse(numericUpDownStartTimeHours.Text);
+            float startTimeMinutesDecimal = float.Parse(numericUpDownStartTimeMinutes.Text);
+            float startTimeDecimal = startTimeHoursInteger + startTimeMinutesDecimal / 60;
+            // Constructor.
+            Task addWateringCan = new Task(selectedArea, durationDecimal, startTimeDecimal, color);
             tempWateringCans.Add(addWateringCan);
             UpdateListView();
             selectedArea = "";
@@ -188,6 +185,7 @@ namespace irrigation_master
                 // Section.
                 ListViewItem lvi = new ListViewItem(
                     item.GetSection());
+                lvi.BackColor = item.GetColor();
                 // Start.
                 lvi.SubItems.Add(TimeString(item.GetStartTime()));
                 // Finish.

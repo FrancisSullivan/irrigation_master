@@ -9,31 +9,34 @@ using System.Xml.Linq;
 #endregion
 namespace irrigation_master
 {
-    internal class WateringCan : IComparable<WateringCan>
+    internal class Task : IComparable<Task>
     {
         #region Variables
         private string section;
         private float duration;
         private float startTime;
         private string fix = "";
+        private Color color;
         #endregion
         #region CompareTo
-        public int CompareTo(WateringCan other)
+        public int CompareTo(Task other)
         {
             return fix.CompareTo(other.fix);
         }
         #endregion
         #region Constructor
-        public WateringCan
+        public Task
         (
             string section, 
             float duration, 
-            float startTime
+            float startTime,
+            Color color
         )
         {
             this.section = section;
             this.duration = duration;
             this.startTime = startTime;
+            this.color = color;
         }
         #endregion
         #region Getters
@@ -48,6 +51,10 @@ namespace irrigation_master
         public float GetStartTime()
         {
             return startTime;
+        }
+        public Color GetColor()
+        {
+            return color;
         }
         #endregion
         #region Setters
