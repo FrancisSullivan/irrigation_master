@@ -22,18 +22,21 @@ namespace irrigation_master
             color = Color.DarkKhaki;
             selectedArea = "Avocado S";
             textBoxSelectedSection.Text = selectedArea;
+            textBoxSelectedSection.BackColor = color;
         }
         private void buttonMangoNW_Click(object sender, EventArgs e)
         {
             color = Color.LightSkyBlue;
             selectedArea = "Mango NW";
             textBoxSelectedSection.Text = selectedArea;
+            textBoxSelectedSection.BackColor = color;
         }
         private void buttonOrange_Click(object sender, EventArgs e)
         {
             color = Color.NavajoWhite;
             selectedArea = "Mango NE";
             textBoxSelectedSection.Text = selectedArea;
+            textBoxSelectedSection.BackColor = color;
         }
         private void buttonBlue_Click(object sender, EventArgs e)
         {
@@ -45,6 +48,7 @@ namespace irrigation_master
             color = Color.Pink;
             selectedArea = "Mango SE";
             textBoxSelectedSection.Text = selectedArea;
+            textBoxSelectedSection.BackColor = color;
         }
         private void buttonGreen0_Click(object sender, EventArgs e)
         {
@@ -144,18 +148,17 @@ namespace irrigation_master
             float startTimeMinutesDecimal = float.Parse(numericUpDownStartTimeMinutes.Text);
             float startTimeDecimal = startTimeHoursInteger + startTimeMinutesDecimal / 60;
             string pump = comboBox1.Text;
+            string scheme = comboBox2.Text;
             // Constructor.
-            Task addWateringCan = new Task(selectedArea, durationDecimal, startTimeDecimal, color, pump);
+            Task addWateringCan = new Task(selectedArea, durationDecimal, startTimeDecimal, color, pump, scheme);
             tempWateringCans.Add(addWateringCan);
             UpdateListView();
             selectedArea = "";
             textBoxSelectedSection.Text = selectedArea;
             // Set time for next entry textBox.
-            float endTimeDecimal
-                = startTimeDecimal + durationDecimal;
+            float endTimeDecimal = startTimeDecimal + durationDecimal;
             int endTimeHoursInteger = (int)endTimeDecimal;
-            int endTimeMinutesInteger =
-                (int)((endTimeDecimal * 60) - (endTimeHoursInteger * 60));
+            int endTimeMinutesInteger = (int)((endTimeDecimal * 60) - (endTimeHoursInteger * 60));
             numericUpDownStartTimeHours.Value = endTimeHoursInteger;
             numericUpDownStartTimeMinutes.Value = endTimeMinutesInteger;
         }
@@ -194,11 +197,6 @@ namespace irrigation_master
                 ListViewItem lvi = new ListViewItem(
                     item.GetSection());
                 lvi.BackColor = item.GetColor();
-                // Start.
-                lvi.SubItems.Add(TimeString(item.GetStartTime()));
-                // Finish.
-                lvi.SubItems.Add(
-                    TimeString(item.GetStartTime() + item.GetDuration()));
                 // Duration.
                 lvi.SubItems.Add(
                     TimeString(item.GetDuration()).ToString().Remove(2)
@@ -207,7 +205,14 @@ namespace irrigation_master
                         item.GetDuration() - ((int)item.GetDuration()))
                         .ToString().Remove(5).Substring(3)
                     + " min");
+                // Start.
+                lvi.SubItems.Add(TimeString(item.GetStartTime()));
+                // Finish.
+                lvi.SubItems.Add(
+                    TimeString(item.GetStartTime() + item.GetDuration()));
+
                 lvi.SubItems.Add(item.GetPump());
+                lvi.SubItems.Add(item.GetScheme());
                 tempListView.Items.Add(lvi);
 
             }
@@ -265,21 +270,23 @@ namespace irrigation_master
             tempSection);
             // Swap Duration
             // Temp = 1.
-            float tempDuration = tempWateringCans.ElementAt(
-            tempListView.SelectedIndices[0]).GetDuration();
+            float tempDuration = tempWateringCans.ElementAt(tempListView.SelectedIndices[0]).GetDuration();
             // 1 = 2.
-            tempWateringCans.ElementAt(
-            tempListView.SelectedIndices[0]).SetDuration(
-            tempWateringCans.ElementAt(
-            tempListView.SelectedIndices[0] + swapIndex).GetDuration());
+            tempWateringCans.ElementAt(tempListView.SelectedIndices[0]).SetDuration(
+            tempWateringCans.ElementAt(tempListView.SelectedIndices[0] + swapIndex).GetDuration());
             // 2 = temp.
-            tempWateringCans.ElementAt(
-            tempListView.SelectedIndices[0] + swapIndex).SetDuration(
-            tempDuration);
+            tempWateringCans.ElementAt(tempListView.SelectedIndices[0] + swapIndex).SetDuration(tempDuration);
+            // Swap Colour.
+            // Temp = 1.
+            Color tempColor = tempWateringCans.ElementAt(tempListView.SelectedIndices[0]).GetColor();
+            // 1 = 2.
+            tempWateringCans.ElementAt(tempListView.SelectedIndices[0]).SetColor(tempWateringCans.ElementAt(tempListView.SelectedIndices[0] + swapIndex).GetColor());
+            // 2 = temp.
+            tempWateringCans.ElementAt(tempListView.SelectedIndices[0] + swapIndex).SetColor(tempColor);
+            // Update.
             UpdateListView();
         }
         #endregion
-
     }
 }
 #region 

@@ -32,9 +32,9 @@
             tabPage2 = new TabPage();
             listViewMonday = new ListView();
             columnHeaderSection = new ColumnHeader();
+            columnHeaderDuration = new ColumnHeader();
             columnHeaderStart = new ColumnHeader();
             columnHeaderFinish = new ColumnHeader();
-            columnHeaderDuration = new ColumnHeader();
             columnPump = new ColumnHeader();
             columnHeader25 = new ColumnHeader();
             tabPage1 = new TabPage();
@@ -152,7 +152,7 @@
             // 
             // listViewMonday
             // 
-            listViewMonday.Columns.AddRange(new ColumnHeader[] { columnHeaderSection, columnHeaderStart, columnHeaderFinish, columnHeaderDuration, columnPump, columnHeader25 });
+            listViewMonday.Columns.AddRange(new ColumnHeader[] { columnHeaderSection, columnHeaderDuration, columnHeaderStart, columnHeaderFinish, columnPump, columnHeader25 });
             listViewMonday.FullRowSelect = true;
             listViewMonday.Location = new Point(6, 6);
             listViewMonday.Name = "listViewMonday";
@@ -166,6 +166,11 @@
             columnHeaderSection.Text = "Section";
             columnHeaderSection.Width = 210;
             // 
+            // columnHeaderDuration
+            // 
+            columnHeaderDuration.Text = "Duration";
+            columnHeaderDuration.Width = 150;
+            // 
             // columnHeaderStart
             // 
             columnHeaderStart.Text = "Start";
@@ -175,11 +180,6 @@
             // 
             columnHeaderFinish.Text = "Finish";
             columnHeaderFinish.Width = 120;
-            // 
-            // columnHeaderDuration
-            // 
-            columnHeaderDuration.Text = "Duration";
-            columnHeaderDuration.Width = 150;
             // 
             // columnPump
             // 
@@ -457,6 +457,7 @@
             // 
             textBoxSelectedSection.Location = new Point(371, 569);
             textBoxSelectedSection.Name = "textBoxSelectedSection";
+            textBoxSelectedSection.ReadOnly = true;
             textBoxSelectedSection.Size = new Size(200, 39);
             textBoxSelectedSection.TabIndex = 31;
             // 
