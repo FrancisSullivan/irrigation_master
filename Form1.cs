@@ -17,6 +17,12 @@ namespace irrigation_master
         #region Selected Area
         private string selectedArea = "";
         private Color color = Color.White;
+        private void button3_Click(object sender, EventArgs e)
+        {
+            color = Color.DarkKhaki;
+            selectedArea = "Avocado S";
+            textBoxSelectedSection.Text = selectedArea;
+        }
         private void buttonMangoNW_Click(object sender, EventArgs e)
         {
             color = Color.LightSkyBlue;
@@ -25,18 +31,19 @@ namespace irrigation_master
         }
         private void buttonOrange_Click(object sender, EventArgs e)
         {
-            color = Color.Orange;
+            color = Color.NavajoWhite;
             selectedArea = "Mango NE";
             textBoxSelectedSection.Text = selectedArea;
         }
         private void buttonBlue_Click(object sender, EventArgs e)
         {
-            selectedArea = "Cyan";
+            selectedArea = "Mango SW";
             textBoxSelectedSection.Text = selectedArea;
         }
         private void buttonPink_Click(object sender, EventArgs e)
         {
-            selectedArea = "Pink";
+            color = Color.Pink;
+            selectedArea = "Mango SE";
             textBoxSelectedSection.Text = selectedArea;
         }
         private void buttonGreen0_Click(object sender, EventArgs e)
@@ -136,8 +143,9 @@ namespace irrigation_master
             int startTimeHoursInteger = int.Parse(numericUpDownStartTimeHours.Text);
             float startTimeMinutesDecimal = float.Parse(numericUpDownStartTimeMinutes.Text);
             float startTimeDecimal = startTimeHoursInteger + startTimeMinutesDecimal / 60;
+            string pump = comboBox1.Text;
             // Constructor.
-            Task addWateringCan = new Task(selectedArea, durationDecimal, startTimeDecimal, color);
+            Task addWateringCan = new Task(selectedArea, durationDecimal, startTimeDecimal, color, pump);
             tempWateringCans.Add(addWateringCan);
             UpdateListView();
             selectedArea = "";
@@ -199,7 +207,9 @@ namespace irrigation_master
                         item.GetDuration() - ((int)item.GetDuration()))
                         .ToString().Remove(5).Substring(3)
                     + " min");
+                lvi.SubItems.Add(item.GetPump());
                 tempListView.Items.Add(lvi);
+
             }
         }
         private string TimeString(float decimalTimeParam)

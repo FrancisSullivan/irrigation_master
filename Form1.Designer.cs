@@ -135,7 +135,7 @@
             TabMenu.Location = new Point(263, 22);
             TabMenu.Name = "TabMenu";
             TabMenu.SelectedIndex = 0;
-            TabMenu.Size = new Size(920, 489);
+            TabMenu.Size = new Size(900, 489);
             TabMenu.TabIndex = 0;
             TabMenu.Selecting += TabMenu_Selecting;
             // 
@@ -145,7 +145,7 @@
             tabPage2.Location = new Point(8, 46);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(904, 435);
+            tabPage2.Size = new Size(884, 435);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Monday";
             tabPage2.UseVisualStyleBackColor = true;
@@ -156,7 +156,7 @@
             listViewMonday.FullRowSelect = true;
             listViewMonday.Location = new Point(6, 6);
             listViewMonday.Name = "listViewMonday";
-            listViewMonday.Size = new Size(892, 423);
+            listViewMonday.Size = new Size(871, 423);
             listViewMonday.TabIndex = 23;
             listViewMonday.UseCompatibleStateImageBehavior = false;
             listViewMonday.View = View.Details;
@@ -164,7 +164,7 @@
             // columnHeaderSection
             // 
             columnHeaderSection.Text = "Section";
-            columnHeaderSection.Width = 240;
+            columnHeaderSection.Width = 210;
             // 
             // columnHeaderStart
             // 
@@ -179,12 +179,12 @@
             // columnHeaderDuration
             // 
             columnHeaderDuration.Text = "Duration";
-            columnHeaderDuration.Width = 140;
+            columnHeaderDuration.Width = 150;
             // 
             // columnPump
             // 
             columnPump.Text = "Pump";
-            columnPump.Width = 100;
+            columnPump.Width = 160;
             // 
             // columnHeader25
             // 
@@ -197,7 +197,7 @@
             tabPage1.Location = new Point(8, 46);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(904, 435);
+            tabPage1.Size = new Size(884, 435);
             tabPage1.TabIndex = 2;
             tabPage1.Text = "Tuesday";
             tabPage1.UseVisualStyleBackColor = true;
@@ -239,7 +239,7 @@
             tabPage3.Location = new Point(8, 46);
             tabPage3.Name = "tabPage3";
             tabPage3.Padding = new Padding(3);
-            tabPage3.Size = new Size(904, 435);
+            tabPage3.Size = new Size(884, 435);
             tabPage3.TabIndex = 3;
             tabPage3.Text = "Wednesday";
             tabPage3.UseVisualStyleBackColor = true;
@@ -281,7 +281,7 @@
             tabPage4.Location = new Point(8, 46);
             tabPage4.Name = "tabPage4";
             tabPage4.Padding = new Padding(3);
-            tabPage4.Size = new Size(904, 435);
+            tabPage4.Size = new Size(884, 435);
             tabPage4.TabIndex = 4;
             tabPage4.Text = "Thursday";
             tabPage4.UseVisualStyleBackColor = true;
@@ -323,7 +323,7 @@
             tabPage5.Location = new Point(8, 46);
             tabPage5.Name = "tabPage5";
             tabPage5.Padding = new Padding(3);
-            tabPage5.Size = new Size(904, 435);
+            tabPage5.Size = new Size(884, 435);
             tabPage5.TabIndex = 5;
             tabPage5.Text = "Friday";
             tabPage5.UseVisualStyleBackColor = true;
@@ -365,7 +365,7 @@
             tabPage6.Location = new Point(8, 46);
             tabPage6.Name = "tabPage6";
             tabPage6.Padding = new Padding(3);
-            tabPage6.Size = new Size(904, 435);
+            tabPage6.Size = new Size(884, 435);
             tabPage6.TabIndex = 6;
             tabPage6.Text = "Saturday";
             tabPage6.UseVisualStyleBackColor = true;
@@ -407,7 +407,7 @@
             tabPage7.Location = new Point(8, 46);
             tabPage7.Name = "tabPage7";
             tabPage7.Padding = new Padding(3);
-            tabPage7.Size = new Size(904, 435);
+            tabPage7.Size = new Size(884, 435);
             tabPage7.TabIndex = 7;
             tabPage7.Text = "Sunday";
             tabPage7.UseVisualStyleBackColor = true;
@@ -525,7 +525,7 @@
             // 
             // buttonOrange
             // 
-            buttonOrange.BackColor = Color.FromArgb(255, 192, 128);
+            buttonOrange.BackColor = Color.NavajoWhite;
             buttonOrange.Font = new Font("Britannic Bold", 10.125F, FontStyle.Regular, GraphicsUnit.Point);
             buttonOrange.Location = new Point(1304, 365);
             buttonOrange.Name = "buttonOrange";
@@ -712,7 +712,7 @@
             // 
             // button3
             // 
-            button3.BackColor = Color.FromArgb(192, 192, 0);
+            button3.BackColor = Color.DarkKhaki;
             button3.Font = new Font("Britannic Bold", 10.125F, FontStyle.Regular, GraphicsUnit.Point);
             button3.Location = new Point(1189, 224);
             button3.Name = "button3";
@@ -720,6 +720,7 @@
             button3.TabIndex = 43;
             button3.Text = "Avocado\r\nS";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // button4
             // 

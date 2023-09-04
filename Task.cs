@@ -17,6 +17,7 @@ namespace irrigation_master
         private float startTime;
         private string fix = "";
         private Color color;
+        private string pump = "";
         #endregion
         #region CompareTo
         public int CompareTo(Task other)
@@ -28,15 +29,17 @@ namespace irrigation_master
         public Task
         (
             string section, 
-            float duration, 
+            float duration,
             float startTime,
-            Color color
+            Color color,
+            string pump
         )
         {
             this.section = section;
             this.duration = duration;
             this.startTime = startTime;
             this.color = color;
+            this.pump = pump;
         }
         #endregion
         #region Getters
@@ -55,6 +58,10 @@ namespace irrigation_master
         public Color GetColor()
         {
             return color;
+        }
+        public string GetPump()
+        {
+            return pump;
         }
         #endregion
         #region Setters
