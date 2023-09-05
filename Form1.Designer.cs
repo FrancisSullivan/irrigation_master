@@ -669,7 +669,7 @@
             buttonClear.Name = "buttonClear";
             buttonClear.Size = new Size(150, 46);
             buttonClear.TabIndex = 36;
-            buttonClear.Text = "Clear";
+            buttonClear.Text = "Clear All";
             buttonClear.UseVisualStyleBackColor = true;
             buttonClear.Click += buttonClear_Click;
             // 

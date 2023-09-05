@@ -161,6 +161,7 @@ namespace irrigation_master
             int endTimeMinutesInteger = (int)((endTimeDecimal * 60) - (endTimeHoursInteger * 60));
             numericUpDownStartTimeHours.Value = endTimeHoursInteger;
             numericUpDownStartTimeMinutes.Value = endTimeMinutesInteger;
+            textBoxSelectedSection.BackColor = Color.White;
         }
         #endregion
         #region Remove Item
@@ -184,6 +185,8 @@ namespace irrigation_master
         {
             tempWateringCans.Clear();
             UpdateListView();
+            numericUpDownStartTimeHours.Value = 6;
+            numericUpDownStartTimeMinutes.Value = 0;
         }
         #endregion
         #region Update listView
@@ -201,17 +204,16 @@ namespace irrigation_master
                 lvi.SubItems.Add(
                     TimeString(item.GetDuration()).ToString().Remove(2)
                     + " h "
-                    + TimeString(
-                        item.GetDuration() - ((int)item.GetDuration()))
-                        .ToString().Remove(5).Substring(3)
+                    + TimeString(item.GetDuration() - ((int)item.GetDuration())).ToString().Remove(5).Substring(3)
                     + " min");
                 // Start.
                 lvi.SubItems.Add(TimeString(item.GetStartTime()));
                 // Finish.
                 lvi.SubItems.Add(
                     TimeString(item.GetStartTime() + item.GetDuration()));
-
+                // Pump.
                 lvi.SubItems.Add(item.GetPump());
+                // Scheme.
                 lvi.SubItems.Add(item.GetScheme());
                 tempListView.Items.Add(lvi);
 
@@ -293,6 +295,16 @@ namespace irrigation_master
 #endregion
 #region Checklist
 /*
+[ ] Edit in place without edit button.
+[ ] Remove add null values.
+[ ] Fix start time for second object during swap.
+[ ] Change selection colour.
+[ ] Allow selection to be retained during move button actions.
+[ ] Add message box confirmation to "Clear All".
+[ ] Remove cursor from selcted task text box.
+[ ] Find a way to enlarge numeric select buttons.
+[ ] Add a settings menu to set default values.
+
 [ ] Change system
     [ ] Water mode changed to 'taps on' mode.
     [ ] Multiple taps can be on simultaniously.
