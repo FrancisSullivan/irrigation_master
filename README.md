@@ -1,4 +1,3 @@
-![image](https://github.com/FrancisSullivan/irrigation_master/assets/99381522/30d04127-6933-4763-9416-b7a6a9bd0646)# irrigation_master
 
 Currently in the early prototype phase.
 This is an app designed to control an irrigation system on a farm.
